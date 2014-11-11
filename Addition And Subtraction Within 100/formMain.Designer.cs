@@ -66,6 +66,7 @@
             this.buttonStart.TabIndex = 5;
             this.buttonStart.Text = "开始";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // labelMinutes
             // 
@@ -88,6 +89,7 @@
             this.textBoxMinutes.TabIndex = 0;
             this.textBoxMinutes.Text = "10";
             this.textBoxMinutes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxMinutes.TextChanged += new System.EventHandler(this.textBoxMinutes_TextChanged);
             // 
             // groupBox2
             // 
@@ -105,12 +107,13 @@
             // textBoxResult
             // 
             this.textBoxResult.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBoxResult.Location = new System.Drawing.Point(264, 26);
+            this.textBoxResult.Location = new System.Drawing.Point(264, 37);
             this.textBoxResult.MaxLength = 2;
             this.textBoxResult.Name = "textBoxResult";
             this.textBoxResult.Size = new System.Drawing.Size(86, 62);
             this.textBoxResult.TabIndex = 9;
             this.textBoxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxResult.TextChanged += new System.EventHandler(this.textBoxResult_TextChanged);
             // 
             // labelEqual
             // 
@@ -157,22 +160,27 @@
             // labelTime
             // 
             this.labelTime.AutoSize = true;
+            this.labelTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelTime.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelTime.Location = new System.Drawing.Point(22, 307);
+            this.labelTime.ForeColor = System.Drawing.Color.Red;
+            this.labelTime.Location = new System.Drawing.Point(30, 307);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(164, 48);
+            this.labelTime.Size = new System.Drawing.Size(142, 50);
             this.labelTime.TabIndex = 2;
-            this.labelTime.Text = "label1";
+            this.labelTime.Text = "00:00";
+            this.labelTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelScore
             // 
-            this.labelScore.AutoSize = true;
+            this.labelScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelScore.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelScore.Location = new System.Drawing.Point(237, 307);
+            this.labelScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelScore.Location = new System.Drawing.Point(310, 307);
             this.labelScore.Name = "labelScore";
-            this.labelScore.Size = new System.Drawing.Size(164, 48);
+            this.labelScore.Size = new System.Drawing.Size(70, 50);
             this.labelScore.TabIndex = 3;
-            this.labelScore.Text = "label2";
+            this.labelScore.Text = "00";
+            this.labelScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer
             // 
