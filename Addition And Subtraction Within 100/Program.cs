@@ -16,7 +16,7 @@ namespace Addition_And_Subtraction_Within_100
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new formMain());
         }
     }
 }
