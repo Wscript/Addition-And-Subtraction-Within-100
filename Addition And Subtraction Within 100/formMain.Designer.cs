@@ -127,40 +127,32 @@
             // 
             // labelNumber2
             // 
-            this.labelNumber2.AutoSize = true;
             this.labelNumber2.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelNumber2.Location = new System.Drawing.Point(140, 40);
             this.labelNumber2.Name = "labelNumber2";
             this.labelNumber2.Size = new System.Drawing.Size(68, 48);
             this.labelNumber2.TabIndex = 7;
-            this.labelNumber2.Text = "00";
             this.labelNumber2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelSymbol
             // 
-            this.labelSymbol.AutoSize = true;
             this.labelSymbol.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelSymbol.Location = new System.Drawing.Point(90, 40);
             this.labelSymbol.Name = "labelSymbol";
             this.labelSymbol.Size = new System.Drawing.Size(44, 48);
             this.labelSymbol.TabIndex = 6;
-            this.labelSymbol.Text = "+";
             // 
             // labelNumber1
             // 
-            this.labelNumber1.AutoSize = true;
             this.labelNumber1.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelNumber1.Location = new System.Drawing.Point(16, 40);
             this.labelNumber1.Name = "labelNumber1";
             this.labelNumber1.Size = new System.Drawing.Size(68, 48);
             this.labelNumber1.TabIndex = 5;
-            this.labelNumber1.Text = "00";
             this.labelNumber1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelTime
             // 
-            this.labelTime.AutoSize = true;
-            this.labelTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelTime.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelTime.ForeColor = System.Drawing.Color.Red;
             this.labelTime.Location = new System.Drawing.Point(30, 307);
@@ -172,7 +164,6 @@
             // 
             // labelScore
             // 
-            this.labelScore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelScore.Font = new System.Drawing.Font("宋体", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.labelScore.Location = new System.Drawing.Point(310, 307);
@@ -205,7 +196,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
