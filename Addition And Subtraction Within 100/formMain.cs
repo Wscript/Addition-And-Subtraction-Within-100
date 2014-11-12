@@ -60,6 +60,7 @@ namespace Addition_And_Subtraction_Within_100
             if (timerTickCounter / 60 == intMinutes)
             {
                 timer.Stop();
+                timerTickCounter = 0;           //停止计时器，并将激活次数清零
                 textBoxMinutes.Enabled = true;
                 textBoxResult.Enabled = false;
                 buttonStart.Enabled = true;
@@ -73,6 +74,7 @@ namespace Addition_And_Subtraction_Within_100
             int intMinutes = 0;
             if (int.TryParse(textBoxMinutes.Text, out intMinutes))
             {
+                labelTime.Text = intMinutes.ToString () + ":00";
                 timer.Interval = 1000;
                 timer.Start();
                 textBoxMinutes.Enabled = false;
