@@ -65,6 +65,7 @@ namespace Addition_And_Subtraction_Within_100
                 textBoxResult.Enabled = false;
                 buttonStart.Enabled = true;
                 textBoxMinutes.Focus();
+
             }
 
         }
