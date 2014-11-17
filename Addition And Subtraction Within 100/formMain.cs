@@ -26,6 +26,7 @@ namespace Addition_And_Subtraction_Within_100
             textBoxMinutes.Focus();
             textBoxMinutes.Text = "1";
             textBoxResult.Enabled = false;
+            this.AcceptButton = buttonStart;
 
         }
 
@@ -80,6 +81,7 @@ namespace Addition_And_Subtraction_Within_100
                 timer.Start();
                 textBoxMinutes.Enabled = false;
                 textBoxResult.Enabled = true;
+                textBoxResult.Text = "";
                 textBoxResult.Focus();
                 labelScore.Text = "0";
                 buttonStart.Enabled = false;
