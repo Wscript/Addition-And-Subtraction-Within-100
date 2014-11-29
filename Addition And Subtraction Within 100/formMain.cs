@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,7 +28,20 @@ namespace Addition_And_Subtraction_Within_100
             textBoxMinutes.Text = "1";
             textBoxResult.Enabled = false;
             this.AcceptButton = buttonStart;
+            if (!Directory.Exists("d:\\log"))
+            {
+                Directory.CreateDirectory("d:\\log");
+            }
 
+            if (File.Exists("d:\\log\\加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log"))
+            {
+                Log("测试开始!", "d:\\log\\", "加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log");
+            }else
+            {
+                File.Create("d:\\log\\加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log");
+                
+                Log("测试开始!", "d:\\log\\", "加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log");
+            }
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -66,7 +80,9 @@ namespace Addition_And_Subtraction_Within_100
                 textBoxResult.Enabled = false;
                 buttonStart.Enabled = true;
                 textBoxMinutes.Focus();
-
+                Log(textBoxMinutes.Text + "分钟加减法测试完成，共计" + labelScore.Text + "题.", 
+                    "d:\\log\\",
+                    "加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log");
             }
 
         }
@@ -153,6 +169,16 @@ namespace Addition_And_Subtraction_Within_100
                     labelNumber1.Text = intNumber2.ToString();
                     labelNumber2.Text = intNumber1.ToString();
                 }
+            }
+        }
+
+        static void Log (string logMessage, string logFolder, string logFilename)
+        {
+            using (StreamWriter w = File.AppendText (logFolder + logFilename))
+            {
+                w.Write ("\r\n");
+                w.Write ("{0} {1}", DateTime.Now.ToLongDateString (), DateTime.Now.ToLongTimeString ());
+                w.Write ("  :{0}", logMessage);
             }
         }
     }
