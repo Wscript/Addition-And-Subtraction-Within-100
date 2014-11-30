@@ -38,8 +38,12 @@ namespace Addition_And_Subtraction_Within_100
                 Log("测试开始!", "d:\\log\\", "加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log");
             }else
             {
-                File.Create("d:\\log\\加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log");
-                
+                FileStream newLogFile = new FileStream("d:\\log\\加减法测试" +
+                                                        DateTime.Now.Year.ToString() + "-" +
+                                                        DateTime.Now.Month.ToString() + "-" +
+                                                        DateTime.Now.Day.ToString() + ".log",
+                                                        FileMode.OpenOrCreate);
+                newLogFile.Close();
                 Log("测试开始!", "d:\\log\\", "加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log");
             }
         }
