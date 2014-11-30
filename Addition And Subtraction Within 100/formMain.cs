@@ -28,13 +28,23 @@ namespace Addition_And_Subtraction_Within_100
             textBoxMinutes.Text = "1";
             textBoxResult.Enabled = false;
             this.AcceptButton = buttonStart;
-            if (File.Exists("d:\\log\\AASW"+DateTime.Now.Year.ToString () + "-" + DateTime.Now.Month.ToString () + "-" + DateTime.Now.Day.ToString ()+".log"))
+            if (!Directory.Exists("d:\\log"))
             {
-                Log("测试开始!","d:\\log\\","AASW" + DateTime.Now.Year.ToString () + "-" + DateTime.Now.Month.ToString () + "-" + DateTime.Now.Day.ToString () + ".log");
+                Directory.CreateDirectory("d:\\log");
+            }
+
+            if (File.Exists("d:\\log\\加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log"))
+            {
+                Log("测试开始!", "d:\\log\\", "加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log");
             }else
             {
-                File.Create ("d:\\log\\AASW" + DateTime.Now.Year.ToString () + "-" + DateTime.Now.Month.ToString () + "-" + DateTime.Now.Day.ToString () + ".log");
-                Log ("测试开始!", "d:\\log\\", "AASW" + DateTime.Now.Year.ToString () + "-" + DateTime.Now.Month.ToString () + "-" + DateTime.Now.Day.ToString () + ".log");
+                FileStream newLogFile = new FileStream("d:\\log\\加减法测试" +
+                                                        DateTime.Now.Year.ToString() + "-" +
+                                                        DateTime.Now.Month.ToString() + "-" +
+                                                        DateTime.Now.Day.ToString() + ".log",
+                                                        FileMode.OpenOrCreate);
+                newLogFile.Close();
+                Log("测试开始!", "d:\\log\\", "加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log");
             }
         }
 
@@ -74,9 +84,9 @@ namespace Addition_And_Subtraction_Within_100
                 textBoxResult.Enabled = false;
                 buttonStart.Enabled = true;
                 textBoxMinutes.Focus();
-                Log (textBoxMinutes.Text + "分钟测试完成，共计" + labelScore.Text + "题.", 
+                Log(textBoxMinutes.Text + "分钟加减法测试完成，共计" + labelScore.Text + "题.", 
                     "d:\\log\\",
-                    "AASW" + DateTime.Now.Year.ToString () + "-" + DateTime.Now.Month.ToString () + "-" + DateTime.Now.Day.ToString () + ".log");
+                    "加减法测试" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + ".log");
             }
 
         }
